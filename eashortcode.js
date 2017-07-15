@@ -2,7 +2,7 @@ var consumer_key = scriptParams.consumer_key;
 var consumer_secret = scriptParams.consumer_secret;
 
 var xhr = new XMLHttpRequest();
-var url = 'https://viakunst-utrecht.nl/wp-json/wc/v2/products';
+var url = home_url() + '/wp-json/wc/v2/products';
 var products = [];
 var success = false;
 
