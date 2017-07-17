@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Eashortcode
  * Plugin URI: https://github.com/lucvanderzandt/eashortcode
- * Version: 1.1
+ * Version: 1.0
  * Author: Luc van der Zandt <lucvanderzandt@kpnplanet.nl>
  * Author URI: https://github.com/lucvanderzandt
  * Description: A plugin to easily add a WooCommerce 'Add to chart' button in Visual Editor
- * License: Apache License 2.0
+ * License: GNU GENERAL PUBLIC LICENSE v3
  */
 include_once('class-eashortcode-plugin-settings.php');
  
