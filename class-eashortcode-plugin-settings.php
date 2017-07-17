@@ -5,10 +5,8 @@ class Eashortcode_Settings {
      * @constructor
      */
     function __construct() {
-        if( is_admin() ) {
-            add_action( 'admin_menu', array( $this, 'eashortcode_add_admin_menu' ) );
-            add_action( 'admin_init', array( $this, 'eashortcode_settings_init' ) );
-        }
+        add_action( 'admin_menu', array( $this, 'eashortcode_add_admin_menu' ) );
+        add_action( 'admin_init', array( $this, 'eashortcode_settings_init' ) );
     }
     
     function eashortcode_add_admin_menu(  ) { 
@@ -23,6 +21,7 @@ class Eashortcode_Settings {
     
         register_setting( 'pluginPage', 'eashortcode_settings' );
         
+        // Settings explaination
         add_settings_section(
             'eashortcode_pluginPage_section', 
             __( 'Settings', 'eashortcode' ), 
@@ -30,22 +29,25 @@ class Eashortcode_Settings {
             'pluginPage'
         );
 
+        // Consumer key
         add_settings_field( 
             'consumer_key', 
-            __( 'Consumer key', 'eashortcode' ), 
+            'Consumer key',
             array( $this, 'consumer_key_render' ), 
             'pluginPage', 
             'eashortcode_pluginPage_section' 
         );
 
+        // Consumer secret
         add_settings_field( 
             'consumer_secret', 
-            __( 'Consumer secret', 'eashortcode' ), 
+            'Consumer secret',
             array( $this, 'consumer_secret_render' ), 
             'pluginPage', 
             'eashortcode_pluginPage_section' 
         );
         
+        // Localize consumer key & consumer secret for use in JavaScript
         $options = get_option('eashortcode_settings');
         $script_params = array(
             'consumer_key' => $options['consumer_key'],
@@ -54,6 +56,7 @@ class Eashortcode_Settings {
         wp_enqueue_script( 'eashortcode', plugin_dir_url ( __FILE__ ) .  'js/script.js', false );
         wp_localize_script( 'eashortcode', 'scriptParams', $script_params );
         
+        // Add settings link
         add_filter( 'plugin_action_links_eashortcode/class-eashortcode-plugin.php', 
             array( &$this, 'plugin_add_settings_link' ) );
     }
