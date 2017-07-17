@@ -8,21 +8,21 @@
  * Description: A plugin to easily add a WooCommerce 'Add to cart' button in Visual Editor
  * License: GNU GENERAL PUBLIC LICENSE v3
  */
-include_once('class-eashortcode-plugin-settings.php');
+include_once( 'class-eashortcode-plugin-settings.php' );
  
 class Eashortcode_Plugin {
 
     /**
      * @constructor
      */
-    function __construct() {
+    function __construct( ) {
         add_action( 'admin_init', array( $this, 'setup_eashortcode' ) ); 
     }
     
     /**
      * Register plugin with WordPress
      */
-    function setup_eashortcode() {
+    function setup_eashortcode( ) {
         if( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
             add_filter( 'mce_external_plugins', array( &$this, 'add_tinymce_plugin' ) );
             add_filter( 'mce_buttons', array( &$this, 'add_tinymce_toolbar_button' ) );

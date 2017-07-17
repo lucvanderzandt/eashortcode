@@ -4,7 +4,7 @@ class Eashortcode_Settings {
     /**
      * @constructor
      */
-    function __construct() {
+    function __construct( ) {
         add_action( 'admin_menu', array( $this, 'eashortcode_add_admin_menu' ) );
         add_action( 'admin_init', array( $this, 'eashortcode_settings_init' ) );
     }
