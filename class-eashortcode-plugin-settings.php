@@ -9,6 +9,9 @@ class Eashortcode_Settings {
         add_action( 'admin_init', array( $this, 'eashortcode_settings_init' ) );
     }
     
+    /**
+     * Add Eashortcode in admin menu
+     */
     function eashortcode_add_admin_menu(  ) { 
         add_options_page( 'Eashortcode', 'Eashortcode', 'manage_options', 'eashortcode',
             array( $this, 'eashortcode_options_page' ) );
