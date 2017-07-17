@@ -41,7 +41,7 @@ xhr.send();
 
 /**
  * Create TinyMCE interface to select a product and insert its 
- * add_to_chart link in the editor
+ * add_to_cart link in the editor
  */
 (function() {  
     tinymce.create( 'tinymce.plugins.eashortcode', {
