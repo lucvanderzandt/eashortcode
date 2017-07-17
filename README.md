@@ -11,10 +11,10 @@ To start using this plugin, you firstly need to configure your WooCommerce consu
 When editing a post or page, hit the top right icon in Visual Editor showing an open box. You are prompted with a list of products you are offering. Choose the product you want to insert an "Add to chart" button of and press "OK". The plugin inserts an *add_to_chart* WooCommerce-link at cursor position
 
 ## Screenshots
-![Editor](img/editor.png)
+![Editor](img/editor.PNG)
 
-![Add product dialog](img/add_product.png)
+![Add product dialog](img/add_product.PNG)
 
-![Result](img/result.png)
+![Result](img/result.PNG)
 
-![Settings](img/settings.png)
+![Settings](img/settings.PNG)
