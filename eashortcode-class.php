@@ -5,7 +5,7 @@
  * Version: 1.0
  * Author: Luc van der Zandt <lucvanderzandt@kpnplanet.nl>
  * Author URI: https://github.com/lucvanderzandt
- * Description: A plugin to easily add an "Add to chart" button in Visual Editor
+ * Description: A plugin to easily add an 'Add to chart' button in Visual Editor
  * License: Apache License 2.0
  */
  
@@ -83,7 +83,7 @@
         wp_localize_script( 'eashortcode', 'scriptParams', $script_params );
         
         $plugin = plugin_basename( __FILE__ );
-        add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
+        add_filter( 'plugin_action_links_$plugin', 'plugin_add_settings_link' );
      }
  
      function eashortcode_text_field_0_render(  ) { 
@@ -102,7 +102,7 @@
 
      function eashortcode_settings_section_callback(  ) { 
         echo __( '<div>This software needs your API keys to retrieve the products you\'re offering</div>
-                  <div>Retrieve your consumer key and consumer secret on the <a href="/wp-admin/admin.php?page=wc-settings&tab=api">WooCommerce settings page</a></div>', 'eashortcode' );
+                  <div>Retrieve your consumer key and consumer secret on the <a href=\'/wp-admin/admin.php?page=wc-settings&tab=api\'>WooCommerce settings page</a></div>', 'eashortcode' );
      }
 
      function eashortcode_options_page(  ) { 
@@ -119,7 +119,7 @@
      }
  
      function plugin_add_settings_link( $links ) {
-        $settings_link = '<a href="options-general.php?page=eashortcode">' . __( 'Settings' ) . '</a>';
+        $settings_link = '<a href=\'options-general.php?page=eashortcode\'>' . __( 'Settings' ) . '</a>';
         array_unshift( $links, $settings_link );
         return $links;
      }
