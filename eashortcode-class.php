@@ -41,27 +41,30 @@
  class Eashortcode_Settings {
      
      function __construct() {
-         add_action( 'admin_menu', array( $this, 'eashortcode_add_admin_menu' ) );
-         add_action( 'admin_init', array( $this, 'eashortcode_settings_init' ) );
+         if( is_admin() ) {
+             add_action( 'admin_menu', array( $this, 'eashortcode_add_admin_menu' ) );
+             add_action( 'admin_init', array( $this, 'eashortcode_settings_init' ) );
+         }
      }
 
      function eashortcode_add_admin_menu(  ) { 
-        add_options_page( 'Eashortcode', 'Eashortcode', 'manage_options', 'eashortcode', 'eashortcode_options_page' );
+        add_options_page( 'Eashortcode', 'Eashortcode', 'manage_options', 'eashortcode', array( $this, 'eashortcode_options_page' ) );
      }
 
      function eashortcode_settings_init(  ) { 
         register_setting( 'pluginPage', 'eashortcode_settings' );
+        
         add_settings_section(
             'eashortcode_pluginPage_section', 
             __( 'Settings', 'eashortcode' ), 
-            'eashortcode_settings_section_callback', 
+            array( $this, 'eashortcode_settings_section_callback' ), 
             'pluginPage'
         );
 
         add_settings_field( 
             'consumer_key', 
             __( 'Consumer key', 'eashortcode' ), 
-            'eashortcode_text_field_0_render', 
+            array( $this, 'eashortcode_text_field_0_render' ), 
             'pluginPage', 
             'eashortcode_pluginPage_section' 
         );
@@ -69,7 +72,7 @@
         add_settings_field( 
             'consumer_secret', 
             __( 'Consumer secret', 'eashortcode' ), 
-            'eashortcode_text_field_1_render', 
+            array( $this, 'eashortcode_text_field_1_render' ), 
             'pluginPage', 
             'eashortcode_pluginPage_section' 
         );
