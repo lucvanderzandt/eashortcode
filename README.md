@@ -8,7 +8,13 @@ This plugin provides WordPress' Visual Editor with a button to easily add a WooC
 To start using this plugin, you firstly need to configure your WooCommerce consumer key and consumer secret. Go to the plugin overview page and click "Settings". You are redirected to a page where you can enter your consumer key and consumer secret. If you don't know those, go to the link given on the page. After entering your consumer key and consumer secret, hit save. 
 
 ## Usage
-When editing a post or page, hit the top right icon in Visual Editor showing an open box. You are prompted with a list of products you are offering. Choose the product you want to insert an "Add to chart" button of, 
+When editing a post or page, hit the top right icon in Visual Editor showing an open box. You are prompted with a list of products you are offering. Choose the product you want to insert an "Add to chart" button of and press "OK". The plugin inserts an *add_to_chart* WooCommerce-link at cursor position
 
 ## Screenshots
-TODO
+![Editor](img/editor.png)
+
+![Add product dialog](img/add_product.png)
+
+![Result](img/result.png)
+
+![Settings](img/settings.png)
